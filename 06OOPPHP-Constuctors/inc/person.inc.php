@@ -20,4 +20,10 @@
      {
          $this->nombre = $nombre;
      }
+     
+     //referimos a una propiedad "privada" para mostrarla fuera de la clase
+     public function getName()
+     {
+         return $this->nombre;
+     }
  }

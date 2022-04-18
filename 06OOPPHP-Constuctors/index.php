@@ -26,7 +26,10 @@ echo $Jeka->nombre . " tiene ojos de color " . $Jeka->colorOjos . ' y hace nada 
 //tambien se puede volver a establecer nuevo valor con metodo
 $Jeka->setName("Felipe");
 
-echo $Jeka->nombre;
+echo $Jeka->nombre . "<br>";
+
+
+echo $Jeka->getName();
 ?>
 
 
