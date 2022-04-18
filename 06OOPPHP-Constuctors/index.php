@@ -16,8 +16,18 @@
 <body>
 
     <?php
+    //introducimos parametros
+    //directamente en clase gracias a __construct()
+$Jeka = new Persona("Jeka", "Azul", 38);
 
-     ?>
+//mostramos el resultado
+echo $Jeka->nombre . " tiene ojos de color " . $Jeka->colorOjos . ' y hace nada ha cumplido '. $Jeka->edad ." años <br>";
+
+//tambien se puede volver a establecer nuevo valor con metodo
+$Jeka->setName("Felipe");
+
+echo $Jeka->nombre;
+?>
 
 
 
