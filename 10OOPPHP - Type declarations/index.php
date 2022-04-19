@@ -1,4 +1,7 @@
-<?php include "inc/config.inc.php";  ?>
+<?php
+//indiamos que php este istricto con tipo de datos
+declare(strict_types = 1);
+include "inc/autoloader.inc.php";  ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,15 @@
 <body>
     <?php
 
-  
+  $person = new personas\Persona("Jeka", 23, "grande");
+
+  try {
+      $person->miNombre(2);
+      echo $person->getName();
+  } catch (TypeError $e) {
+      echo "Error!: " .$e->getMessage();
+  }
+
 
  ?>
 </body>
