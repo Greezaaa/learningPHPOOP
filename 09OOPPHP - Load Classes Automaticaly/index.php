@@ -14,10 +14,10 @@ include "inc/autoloader.inc.php";
 
 <body>
     <?php
-        
-        $persona = new Persona("Jeka", 22, "1.70");
+        //llamamos la clase "Persona" con namespace "personas"
+        $persona = new personas\Persona("Jeka", 22, "1.70");
         echo $persona->name . " tiene " . $persona->edad ." años y mide mas de " .$persona->altura . "<br>";
-
+        //llamamos la clase directamente de la carpeta Classes
         $dirName = new House("Zumaia 25", "Bilbao", "3A");
         echo "Vive en la calle " . $dirName->street . " puerta " . $dirName->flor ." que esta en " . $dirName->city . "<br>";
       
