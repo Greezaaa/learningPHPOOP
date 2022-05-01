@@ -1,40 +1,90 @@
 <?php
+//Interfaces
 
- //SCOPE Resolution Operators (::)
- 
- //Primera clase
-
- class FirstClass
- {
-     const EXAMPLE  = "No se puede cambiar CONSTANTE!!!";
-
-     //Metodos
-     public static function test()
-     {
-         $testing = "Esto es un test";
-         return $testing;
-     }
- }
-
-//  $a = FirstClass::EXAMPLE;
-// echo $a;
-
-//segunda clase
-class SecondClass extends FirstClass
+//new interface
+interface PaymentsInterface
 {
-    public static $staticProperty = "Propiedad static";
+    public function payNow();
+}
 
-    //metodos
+interface LoginInterface
+{
+    public function loginFirst();
+}
 
-    public static function anotherTest()
+class Paypal implements PaymentsInterface, LoginInterface
+{
+    public function loginFirst()
     {
-        //para acceder al contenido de la clase padre
-        echo parent::EXAMPLE;
-
-        //para acceder al contenido de propia clase
-        echo self::$staticProperty;
+        # code...
+    }
+    public function payNow()
+    {
+        # code...
+    }
+    public function payentProcess()
+    {
+        $this->loginFirst();
+        $this->payNow();
+    }
+}
+class Visa implements PaymentsInterface
+{
+    public function loginFirst()
+    {
+        # code...
+    }
+    public function payNow()
+    {
+        # code...
+    }
+    public function payentProcess()
+    {
+        $this->loginFirst();
+        $this->payNow();
+    }
+}
+class Cash implements PaymentsInterface
+{
+    public function loginFirst()
+    {
+        # code...
+    }
+    public function payNow()
+    {
+        # code...
+    }
+    public function payentProcess()
+    {
+        $this->loginFirst();
+        $this->payNow();
+    }
+}
+class BankTransfer implements PaymentsInterface, LoginInterface
+{
+    public function loginFirst()
+    {
+        # code...
+    }
+    public function payNow()
+    {
+        # code...
+    }
+    public function payentProcess()
+    {
+        $this->loginFirst();
+        $this->payNow();
     }
 }
 
-$b = SecondClass::anotherTest();
-echo $b;
+class BuyProduct
+{
+    public function pay(PaymentsInterface $paymentType)
+    {
+        $paymentType->payNow();
+    }
+}
+
+$paymentType = new Cash();
+$buyProduct = new BuyProduct();
+$buyProduct->pay($paymentType);
