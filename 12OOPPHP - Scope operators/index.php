@@ -16,8 +16,8 @@
      }
  }
 
-//  $a = FirstClass::EXAMPLE;
-// echo $a;
+ $a = FirstClass::EXAMPLE;
+echo $a;
 
 //segunda clase
 class SecondClass extends FirstClass
