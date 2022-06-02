@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS `learn_oop`;
+
+CREATE TABLE IF NOT EXISTS `learn_oop`.`users` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(250) NOT NULL,
+    `email` VARCHAR(250) NOT NULL,
+    `birth` VARCHAR(250) NOT NULL,
+    `data_create` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;

@@ -16,7 +16,7 @@
      }
  }
 
- $a = FirstClass::EXAMPLE;
+ $a = FirstClass::test();
 echo $a;
 
 //segunda clase
